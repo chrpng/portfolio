@@ -235,7 +235,7 @@ export const NavLinks = styled.div`
     }
   }
 
-  a {
+  a, div {
     color: var(--primaryText);
     text-decoration: none;
     padding: 0;
@@ -247,7 +247,8 @@ export const NavLinks = styled.div`
   }
 
   @media (hover: hover) {
-    a:hover {
+    a:hover,
+		div:hover {
       color: var(--primary);
     }
   }

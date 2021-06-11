@@ -1,29 +1,32 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Welcome from '../components/Welcome'
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+
 const IndexPage = () => (
-  <Layout>
+  <>
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
+		<Welcome />
+		<StaticImage
+			src="../images/avatar.jpg"
+			width={200}
+			height={200}
+			quality={95}
+			formats={["AUTO", "WEBP", "AVIF"]}
+			alt="A Gatsby astronaut"
+			style={{ borderRadius: `50%` }}
+			placeholder="blurred"
+		/>
     <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+      <AniLink cover to="/page-2/">Go to page 2</AniLink> <br />
+      <AniLink cover to="/using-typescript/">Go to "Using TypeScript"</AniLink>
     </p>
-  </Layout>
+  </>
 )
 
 export default IndexPage

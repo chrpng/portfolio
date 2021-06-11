@@ -32,5 +32,31 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+		{
+      resolve: `gatsby-plugin-styled-components`,
+    },
+		{
+			resolve: `gatsby-plugin-transition-link`,
+			// options: {
+			// 	layout: require.resolve('./src/components/Layout.js')
+			// }
+		},
+		{
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: `Quicksand`,
+              variants: [`300`, `500`, `700`],
+						},
+						{
+              family: `Ubuntu`,
+              variants: [`400`, `700`],
+						},
+          ],
+        },
+      },
+		},
   ],
 }

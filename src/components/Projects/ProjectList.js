@@ -30,43 +30,30 @@ const FlexItem = styled.div`
 `
 
 const ProjectList = (props) => {
-  // state = {
-  //   products: [],
-  //   sortedProducts: [],
-  // }
-	const [projects, setProjects] = useState([])
+	const [projects, setProjects] = useState(props.projects)
 
-	useEffect(() => {
-		let isMounted = true
-		if (isMounted) {
-			setProjects(props.projects)
-		}
-		return () => { isMounted = false }
-	}, [])
+	// useEffect(() => {
+	// 	let isMounted = true
+	// 	if (isMounted) {
+	// 		setProjects(props.projects)
+	// 	}
+	// 	return () => { isMounted = false }
+	// }, [])
 
-  // componentDidMount() {
-  //   this.setState({
-  //     products: this.props.products.edges,
-  //     sortedProducts: this.props.products.edges,
-  //   })
-  // }
-
-  // render() {
-    return (
-      <Section>
-        <FlexContainer>
-          {/* {this.state.sortedProducts.map(({ node }) => { */}
-          {projects.map((project) => {
-            return (
-              <FlexItem key={project.id}>
-                <Project project={project} />
-              </FlexItem>
-            )
-          })}
-        </FlexContainer>
-      </Section>
-    )
-  // }
+	return (
+		<Section>
+			<FlexContainer>
+				{/* {this.state.sortedProducts.map(({ node }) => { */}
+				{projects.map((project) => {
+					return (
+						<FlexItem key={project.id}>
+							<Project project={project} />
+						</FlexItem>
+					)
+				})}
+			</FlexContainer>
+		</Section>
+	)
 }
 
 export default ProjectList

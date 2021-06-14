@@ -3,8 +3,6 @@ import * as React from "react"
 
 import Welcome from '../components/Welcome'
 
-import Layout from "../components/Layout"
-import Grid from "../components/Grid"
 import Seo from "../components/seo"
 import PulseContainer from "../components/PulseContainer/PulseContainer"
 
@@ -34,7 +32,6 @@ const IndexPage = () => (
 		<PositionAvatar>
 			<PulseContainer />
 		</PositionAvatar>
-		
   </>
 )
 

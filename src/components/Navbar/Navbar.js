@@ -5,8 +5,6 @@ import links from "../../constants/links"
 // import quickNav from "../../constants/quickNav"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
-// import { MdHome, MdEmail } from "react-icons/md"
-
 import DarkMode from "../DarkMode/DarkMode"
 
 import { NavBar, NavButton, NavLogo, NavLogoImageWrapper, NavCenter, NavLinks, Spacer, ThemeSwitch } from "./Navbar.styles"

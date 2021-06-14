@@ -54,7 +54,7 @@ const projectsArray = [
 		name: "The Next Web (Recreation)",
 		slug: "png-photography.png",
 		url: "https://chrpng.github.io/odin-thenextweb/",
-		imagePath: "projects/png-photography.png",
+		// imagePath: "projects/png-photography.png",
 		tags: [
 			"html5", "css"
 		]

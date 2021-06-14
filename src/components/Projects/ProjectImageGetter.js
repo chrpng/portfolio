@@ -8,8 +8,7 @@ const ProjectImageGetter = (props) => {
 	// console.log(data.allFile.edges[0].node.relativePath)
 	// console.log(data)
 
-	const renderImage = (edge = data.placeholder) => {
-		console.log("edge", edge)
+	const renderImage = (edge = { node: data.placeholder }) => {
 		const image = getImage(edge.node)
 		return (
 			<GatsbyImage image={image} alt="project thumbnail"/>
@@ -17,7 +16,6 @@ const ProjectImageGetter = (props) => {
 	}
 	
 	const file = data.allFile.edges.find(edge => edge.node.relativePath === props.src)
-	// console.log(props)
 	return (
 		renderImage(file)
 	)

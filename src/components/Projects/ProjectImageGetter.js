@@ -5,8 +5,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ProjectImageGetter = (props) => {
 	const data = useStaticQuery(getAllProjectImages)
-	console.log(data.allFile.edges[0].node.relativePath)
-	console.log(data)
+	// console.log(data.allFile.edges[0].node.relativePath)
+	// console.log(data)
 
 	const renderImage = (edge = data.placeholder) => {
 		console.log("edge", edge)
@@ -17,7 +17,7 @@ const ProjectImageGetter = (props) => {
 	}
 	
 	const file = data.allFile.edges.find(edge => edge.node.relativePath === props.src)
-	console.log(props)
+	// console.log(props)
 	return (
 		renderImage(file)
 	)

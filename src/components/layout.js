@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 
 import Navbar from './Navbar/Navbar'
+import Footer from "./Footer/Footer"
 
 // import "./Layout.css"
 
@@ -18,7 +19,8 @@ const GlobalStyle = createGlobalStyle`
 	:root {
 		--background: #292c35;
 		--border: #313131;
-		--primary: #ffc400;
+		// --primary: #ffc400; //yellowish
+		--primary: #de5375; //reddish
 		--inActive: #505050;
 		
 		--menuItem: 1.125rem;
@@ -26,10 +28,11 @@ const GlobalStyle = createGlobalStyle`
 		--h1: 2rem;
 		--h2: 1.375rem;
 		--paddingBorder: 1.875rem;
-		--paddingStd: 3.125rem;
+		// --paddingStd: 3.125rem;
+		--paddingStd: 1.875rem;
 		--paddingLarge: 4.688rem;
 		
-		--primaryText: #fff;
+		--primaryText: rgb(248, 245, 245);
 		--insetShadow: 0 0 50px var(--background) inset;
 
 		--globalTransitionTiming: 0.2s ease-in;
@@ -40,6 +43,7 @@ const GlobalStyle = createGlobalStyle`
 			--background: rgb(248, 245, 245);
 			--border: #313131;
 			--primary: #ffc400;
+			--primary: #40e3af;
 			--inActive: #505050;
 
 			--primaryText: #1d1d1d;
@@ -51,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
 		@media(min-width:768px) {
 			--h1: 2.375rem;
 			--h2: 1.625rem;
-			--paddingStd: 4.688rem;
+			--paddingStd: 2.375rem;
 			--paddingLarge: 7.813rem;
 		}
 
@@ -59,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
 			--menuItem: 1.25rem;
 			--h1: 3.125rem;
 			--h2: 1.75rem;
-			--paddingStd: 5.625rem;
+			--paddingStd: 3.125rem;
 			--paddingLarge: 9.375rem;
 
 			--navbarSpacer: 85px;
@@ -115,6 +119,10 @@ const GlobalStyle = createGlobalStyle`
 	h2 {
 		font-size: var(--h2);
 		font-weight: 500;
+	}
+
+	a {
+		color: var(--primary);
 	}
 
 	a.btn,
@@ -207,15 +215,7 @@ const Layout = ({ children }) => {
         }}
       > */}
         <StyledMain>{children}</StyledMain>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <Footer />
       {/* </div> */}
     </>
   )

@@ -1,6 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
+const PageWrapper = styled.div`
+	max-width: 960px;
+	margin: 0 auto;
+`
+
 const TitleArea = styled.div`
   @media (min-width: 768px) {
     grid-column: 1 / 4;
@@ -26,7 +31,7 @@ const ContentArea = styled.div`
 
 const PageIntro = ({ title, subTitle, paragraph }) => {
   return (
-    <>
+    <PageWrapper>
       <TitleArea>
         <Title>{title}</Title>
       </TitleArea>
@@ -34,7 +39,7 @@ const PageIntro = ({ title, subTitle, paragraph }) => {
         <h2>{subTitle}</h2>
         <p>{paragraph}</p>
       </ContentArea>
-    </>
+    </PageWrapper>
   )
 }
 

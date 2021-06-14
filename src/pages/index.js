@@ -1,31 +1,40 @@
 import * as React from "react"
 // import { Link } from "gatsby"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+
 import Welcome from '../components/Welcome'
 
 import Layout from "../components/Layout"
+import Grid from "../components/Grid"
 import Seo from "../components/seo"
+import PulseContainer from "../components/PulseContainer/PulseContainer"
 
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+
+const PositionAvatar = styled.div`
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+
+	@media(min-width: 1200px) {
+		left: auto;
+		right: 0;
+		bottom: calc(50% - 200px);
+	}
+`
 
 const IndexPage = () => (
   <>
     <Seo title="Home" />
 		<Welcome />
-		<StaticImage
-			src="../images/avatar.jpg"
-			width={200}
-			height={200}
-			quality={95}
-			formats={["AUTO", "WEBP", "AVIF"]}
-			alt="A Gatsby astronaut"
-			style={{ borderRadius: `50%` }}
-			placeholder="blurred"
-		/>
-    <p>
-      <AniLink cover to="/page-2/">Go to page 2</AniLink> <br />
-      <AniLink cover to="/using-typescript/">Go to "Using TypeScript"</AniLink>
-    </p>
+		<PositionAvatar>
+			<PulseContainer />
+		</PositionAvatar>
+		
   </>
 )
 

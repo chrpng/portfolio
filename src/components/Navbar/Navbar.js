@@ -52,7 +52,7 @@ const Navbar = () => {
 								{/* <GatsbyImage image={imageAvatar} style={{ borderRadius: "50%" }} alt="navbar home avatar" /> */}
 								<NavLogoImageWrapper>
 									<svg height="100" width="100">
-										<circle class="circle" cx="50" cy="50" r="30" stroke-width="2" fill-opacity="0" pathLength="100"/>
+										<circle className="circle" cx="50" cy="50" r="30" strokeWidth="3" fillOpacity="0" pathLength="100"/>
 									</svg>
 									<StaticImage
 										src="../../images/avatar.jpg"

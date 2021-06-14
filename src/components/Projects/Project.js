@@ -102,8 +102,8 @@ const Project = ({ project }) => {
 				<ProjectTags>
 					<ul>
 						{
-							tags.map(tag => {
-								return <li>{tag}</li>
+							tags.map((tag, i) => {
+								return <li key={i}>{tag}</li>
 							})
 						}
 					</ul>
@@ -114,10 +114,10 @@ const Project = ({ project }) => {
         <h2>{name || "Name not listed"}</h2>
         {/* <h3>£ {price || "Call"}</h3> */}
 				{/* <a href={`/projects/${slug}`}> */}
-        <AniLink className="btn" cover bg="#1d1d1d" to={url}>
+        <a className="btn" bg="#1d1d1d" href={url}>
         {/* <AniLink className="btn" cover bg="#1d1d1d" to={`/Projects/${slug}`}> */}
           View Project
-        </AniLink>
+        </a>
 				{/* </a> */}
       </ProjectContent>
     </ProjectItem>

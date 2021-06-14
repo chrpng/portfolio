@@ -92,7 +92,7 @@ export const NavLogoImageWrapper = styled.div`
 	}
 
 	&:hover .circle {
-		animation: 1s ease-in-out forwards stroke;
+		animation: 0.6s ease-in-out forwards stroke;
 	}
 
 	@keyframes stroke {

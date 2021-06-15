@@ -24,16 +24,15 @@ const GridItem = styled.div`
 
 const ProjectList = (props) => {
 	const [projects, setProjects] = useState(props.projects)
-	const [filter, setFilter] = useState(null)
+	const [filter, setFilter] = useState("all")
 
 	const filterProjects = (tag) => {
 		if (tag === "all") {
 			setProjects(props.projects)
-			setFilter(null)
 		} else {
 			setProjects(props.projects.filter(project => project.tags.includes(tag)))
-			setFilter(tag)
 		}
+		setFilter(tag)
 	}
 	// useEffect(() => {
 	// 	let isMounted = true

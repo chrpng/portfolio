@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiFolder } from "react-icons/fi";
+import { FiFolder, FiUser } from "react-icons/fi";
 
 export default [
   {
@@ -7,8 +7,9 @@ export default [
     text: "portfolio",
 		icon: <FiFolder />,
   },
-  // {
-  //   path: "/about",
-  //   text: "about",
-  // },
+  {
+		path: "/about",
+    text: "about",
+		icon: <FiUser />,
+  },
 ]

@@ -1,17 +1,53 @@
 import * as React from "react"
 import styled from "styled-components"
 
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { FiHome, FiGithub, FiLinkedin } from "react-icons/fi";
+
 const StyledFooter = styled.footer`
+`
+
+const CenterDiv = styled.div`
 	margin: 2em 0;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+
+	white-space: pre; // for the space between text and anchor
+
+	.footer-links {
+		font-size: 18px;
+		line-height: 18px;
+		border: 1px solid var(--primary);
+		padding: 4px;
+		display: flex;
+		width: auto;
+		
+		> svg {
+			vertical-align: middle;
+		}
+
+		&:hover {
+			background-color: var(--primary);
+			color: var(--primaryText);
+		}
+
+		&:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
 `
 
 const Footer = () => {
 	return (
 		<StyledFooter>
-			© {new Date().getFullYear()}, Built with
-			{` `}
-			<a href="https://www.gatsbyjs.com">Gatsby</a>
+			<CenterDiv>
+				<AniLink className="footer-links" cover to="/"><FiHome/></AniLink>
+				<a className="footer-links" href="https://github.com/chrpng"><FiGithub/></a>
+				<a className="footer-links" href="https://www.linkedin.com/in/christopher-png-329b9251/"><FiLinkedin/></a>
+			</CenterDiv>
+			<CenterDiv>
+				© {new Date().getFullYear()}, Built with <a href="https://www.gatsbyjs.com">Gatsby</a>
+			</CenterDiv>
 		</StyledFooter>
 	)
 }

@@ -19,8 +19,6 @@ const Projects = () => (
 				<ProjectsWrapper />
 			{/* </Grid> */}
 		</section>
-    
-    <AniLink cover to="/">Go back to the homepage</AniLink>
   </>
 )
 

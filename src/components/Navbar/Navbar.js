@@ -79,7 +79,7 @@ const Navbar = () => {
                 return (
                   <li key={index}>
                     <AniLink cover bg="var(--background)" to={item.path}>
-											{item.icon}
+											{item.icon}{" "}
                       {item.text}
                     </AniLink>
                   </li>

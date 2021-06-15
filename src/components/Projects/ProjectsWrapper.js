@@ -50,7 +50,7 @@ const projectsArray = [
 		id: 4,
 		name: "The Next Web (Recreation)",
 		url: "https://chrpng.github.io/odin-thenextweb/",
-		imagePath: "projects/the-next-web.png.png",
+		imagePath: "projects/the-next-web.png",
 		tags: [
 			"html5", "css"
 		]

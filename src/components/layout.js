@@ -123,6 +123,10 @@ const GlobalStyle = createGlobalStyle`
 
 	a {
 		color: var(--primary);
+
+		@media(hover: hover) {
+			cursor: pointer;
+		}
 	}
 
 	a.btn,
@@ -155,10 +159,6 @@ const GlobalStyle = createGlobalStyle`
 
 		&:focus {
 			color: var(--primary);
-		}
-
-		@media(hover: hover) {
-			cursor: pointer;
 		}
 	}
 
@@ -204,19 +204,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
 			<GlobalStyle />
 			<Navbar />
-      {/* <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      > */}
-        <StyledMain>{children}</StyledMain>
-        <Footer />
-      {/* </div> */}
+			<StyledMain>{children}</StyledMain>
+			<Footer />
     </>
   )
 }

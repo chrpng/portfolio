@@ -86,12 +86,6 @@ const Navbar = () => {
                 )
               })}
 							<li>
-								<AniLink cover bg="var(--background)" to={`/contact`}>
-									{/* <MdEmail /> */}
-									Email
-								</AniLink>
-							</li>
-							<li>
 								<ThemeSwitch><DarkMode /></ThemeSwitch>
 							</li>
             </ul>

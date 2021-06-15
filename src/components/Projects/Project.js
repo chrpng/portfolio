@@ -98,25 +98,27 @@ const Project = ({ project }) => {
   return (
     <ProjectItem>
       {/* <GatsbyImage image={image} alt="single Project" /> */}
-			<ProjectImageWrapper>
-				<ProjectTags>
-					<ul>
-						{
-							tags.map((tag, i) => {
-								return <li key={i}>{tag}</li>
-							})
-						}
-					</ul>
-				</ProjectTags>
-				<ProjectImageGetter src={imagePath} />
-			</ProjectImageWrapper>
+			<a href={url}>
+				<ProjectImageWrapper>
+					<ProjectTags>
+						<ul>
+							{
+								tags.map((tag, i) => {
+									return <li key={i}>{tag}</li>
+								})
+							}
+						</ul>
+					</ProjectTags>
+					<ProjectImageGetter src={imagePath} />
+				</ProjectImageWrapper>
+			</a>
       <ProjectContent>
         <h2>{name || "Name not listed"}</h2>
         {/* <h3>£ {price || "Call"}</h3> */}
 				{/* <a href={`/projects/${slug}`}> */}
         <a className="btn" bg="#1d1d1d" href={url}>
         {/* <AniLink className="btn" cover bg="#1d1d1d" to={`/Projects/${slug}`}> */}
-          View Project
+          View site
         </a>
 				{/* </a> */}
       </ProjectContent>

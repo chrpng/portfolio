@@ -3,7 +3,7 @@ import * as React from "react"
 
 import Welcome from '../components/Welcome'
 
-import Seo from "../components/seo"
+import Seo from "../components/SEO"
 import PulseContainer from "../components/PulseContainer/PulseContainer"
 
 import styled from "styled-components"

@@ -4,11 +4,11 @@ import PageIntro from "../components/PageIntro"
 import ProjectsWrapper from "../components/Projects/ProjectsWrapper"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import Seo from "../components/seo"
+import Seo from "../components/SEO"
 
 const Projects = () => (
   <>
-    <Seo title="Projects" />
+    <Seo title="Portfolio" />
 		<section className="section-padding">
 			{/* <Grid> */}
 				<PageIntro
@@ -18,8 +18,6 @@ const Projects = () => (
 				/>
 				<ProjectsWrapper />
 			{/* </Grid> */}
-			<h1>Hi from the second page</h1>
-			<p>Welcome to page 2</p>
 		</section>
     
     <AniLink cover to="/">Go back to the homepage</AniLink>

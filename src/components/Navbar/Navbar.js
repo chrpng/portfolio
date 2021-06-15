@@ -47,7 +47,6 @@ const Navbar = () => {
         <NavCenter>
           <NavLogo>
 							<AniLink cover bg="var(--background)" to="/">
-								{/* <GatsbyImage image={imageAvatar} style={{ borderRadius: "50%" }} alt="navbar home avatar" /> */}
 								<NavLogoImageWrapper>
 									<svg height="100" width="100">
 										<circle className="circle" cx="50" cy="50" r="30" strokeWidth="3" fillOpacity="0" pathLength="100"/>
@@ -78,7 +77,7 @@ const Navbar = () => {
               {links.map((item, index) => {
                 return (
                   <li key={index}>
-                    <AniLink cover bg="var(--background)" to={item.path}>
+                    <AniLink cover bg="var(--background)" to={item.path} activeClassName="active">
 											{item.icon}{" "}
                       {item.text}
                     </AniLink>

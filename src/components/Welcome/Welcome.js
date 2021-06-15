@@ -22,6 +22,10 @@ const SplashSection = styled.section`
 		margin: 0;
 	}
 	
+	a.btn {
+		margin-top: 20px;
+	}
+
 	@media (min-width: 768px) {
 		padding-left: 96px;
 	}

@@ -1,37 +1,40 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
+import Filter from "./Filter/Filter"
 import Project from "./Project"
 
-const Section = styled.section`
-  grid-column: 1 / 4;
-  margin-left: -20px;
-  margin-right: -20px;
-`
-
-const FlexContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+const GridContainer = styled.section`
 	max-width: 960px;
 	margin: 0 auto;
 
-	justify-content: space-between;
+	display: grid;
+	grid-gap: 40px;
+
+	@media (min-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+	}
 `
 
-const FlexItem = styled.div`
-  width: 100%;
-  margin-bottom: 40px;
+const FilterItem = styled.div`
+	grid-column: 1 / -1;
+`
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-  @media (min-width: 768px) {
-    flex: 0 1 460px;
-  }
+const GridItem = styled.div`
 `
 
 const ProjectList = (props) => {
 	const [projects, setProjects] = useState(props.projects)
+	const [filter, setFilter] = useState(null)
 
+	const filterProjects = (tag) => {
+		if (tag === "all") {
+			setProjects(props.projects)
+			setFilter(null)
+		} else {
+			setProjects(props.projects.filter(project => project.tags.includes(tag)))
+			setFilter(tag)
+		}
+	}
 	// useEffect(() => {
 	// 	let isMounted = true
 	// 	if (isMounted) {
@@ -41,18 +44,21 @@ const ProjectList = (props) => {
 	// }, [])
 
 	return (
-		<Section>
-			<FlexContainer>
-				{/* {this.state.sortedProducts.map(({ node }) => { */}
-				{projects.map((project) => {
-					return (
-						<FlexItem key={project.id}>
-							<Project project={project} />
-						</FlexItem>
-					)
-				})}
-			</FlexContainer>
-		</Section>
+		<>
+		<GridContainer>
+			<FilterItem>
+				<Filter filter={filter} handleFilter={filterProjects} />
+			</FilterItem>
+			{/* {this.state.sortedProducts.map(({ node }) => { */}
+			{projects.map((project) => {
+				return (
+					<GridItem key={project.id}>
+						<Project project={project} />
+					</GridItem>
+				)
+			})}
+		</GridContainer>
+		</>
 	)
 }
 

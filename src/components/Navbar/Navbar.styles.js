@@ -241,7 +241,8 @@ export const NavLinks = styled.div`
     padding: 0;
     transition: var(--transition) color;
 
-    &:focus {
+    &:focus,
+		&.active {
       color: var(--primary);
     }
   }

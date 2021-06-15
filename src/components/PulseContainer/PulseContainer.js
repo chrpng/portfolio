@@ -5,12 +5,11 @@ import styled from 'styled-components'
 import { StaticImage } from "gatsby-plugin-image"
 
 const Container = styled.div`
-	width: 600px;
+	width: 400px;
 	height: 400px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
 	position: relative;
 
 	.circle {

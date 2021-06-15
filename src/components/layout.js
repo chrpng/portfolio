@@ -133,12 +133,12 @@ const GlobalStyle = createGlobalStyle`
 	button.btn {
 		color: var(--primaryText);
 		background-color: transparent;
-		font-family: 'Heebo', sans-serif;
+		font-family: 'Ubuntu', sans-serif;
 		border: 0;
 		text-decoration: none;
 		padding: 0;
 		transition: var(--transition) color;
-		text-transform: capitalize;
+		text-transform: uppercase;
 		font-size: var(--menuItem);
 		font-weight: 900;
 		letter-spacing: -0.5px;

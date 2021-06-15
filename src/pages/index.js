@@ -14,13 +14,13 @@ const PositionAvatar = styled.div`
 	@media (min-width: 768px) {
 		display: block;
 		position: absolute;
-		left: 0;
-		bottom: 0;
+		left: 100px;
+		bottom: 50px;
 	}
 
 	@media(min-width: 1200px) {
 		left: auto;
-		right: 0;
+		right: 100px;
 		bottom: calc(50% - 200px);
 	}
 `

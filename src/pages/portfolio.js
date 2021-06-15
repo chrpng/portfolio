@@ -14,7 +14,7 @@ const Projects = () => (
 				<PageIntro
 					title="Web Developer Portfolio"
 					subTitle="Some of the projects I've worked on"
-					paragraph="Take a look!"
+					paragraph=""
 				/>
 				<ProjectsWrapper />
 			{/* </Grid> */}

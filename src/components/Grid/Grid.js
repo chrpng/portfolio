@@ -2,15 +2,17 @@ import React from "react"
 import styled from "styled-components"
 
 const Container = styled.div`
-  display: grid;
-  grid-gap: 40px;
-  max-width: 1200px;
+  display: block;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   box-sizing: content-box;
+	align-items: center;
 
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr;
+		display: grid;
+  	grid-gap: 40px;
+    grid-template-columns: 1fr 1fr;
   }
 `
 

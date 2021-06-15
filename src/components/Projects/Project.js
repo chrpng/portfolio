@@ -7,8 +7,6 @@ import propTypes from "prop-types"
 
 const ProjectItem = styled.article`
   width: 100%;
-  // padding: 0 20px;
-	
 `
 
 const ProjectImageWrapper = styled.div`
@@ -49,7 +47,7 @@ const ProjectContent = styled.div`
   }
 `
 	
-const ProjectTags = styled.div`
+const ProjectTagsContainer = styled.div`
 	position: absolute;
 	z-index: 21;
 	top: 0;
@@ -61,7 +59,6 @@ const ProjectTags = styled.div`
 	transition: 0.2s all ease-in;
 
 	ul {
-		// width: 100%;
 		height: 100%;
 		display: flex;
 		align-items: center;
@@ -70,17 +67,6 @@ const ProjectTags = styled.div`
 		align-content: center;
 	}
 
-	li {
-		text-transform: uppercase;
-		display: inline-block;
-		padding: 0.25em 0.5em;
-		background-color: #313131;
-		color: #999;
-		border-radius: 3px;
-		margin: 2px;
-	}
-
-
 	&:hover {
 		opacity: 100%;
 
@@ -88,6 +74,16 @@ const ProjectTags = styled.div`
 			background-color: rgba(0,0,0,0.1);
 		}
 	}
+`
+
+const ProjectTag = styled.li`
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	background-color: #313131;
+	color: #999;
+	border-radius: 3px;
+	margin: 2px;
 `
 
 const Project = ({ project }) => {
@@ -100,15 +96,15 @@ const Project = ({ project }) => {
       {/* <GatsbyImage image={image} alt="single Project" /> */}
 			<a href={url}>
 				<ProjectImageWrapper>
-					<ProjectTags>
+					<ProjectTagsContainer>
 						<ul>
 							{
 								tags.map((tag, i) => {
-									return <li key={i}>{tag}</li>
+									return <ProjectTag key={i}>{tag}</ProjectTag>
 								})
 							}
 						</ul>
-					</ProjectTags>
+					</ProjectTagsContainer>
 					<ProjectImageGetter src={imagePath} />
 				</ProjectImageWrapper>
 			</a>
@@ -118,7 +114,7 @@ const Project = ({ project }) => {
 				{/* <a href={`/projects/${slug}`}> */}
         <a className="btn" bg="#1d1d1d" href={url}>
         {/* <AniLink className="btn" cover bg="#1d1d1d" to={`/Projects/${slug}`}> */}
-          View site
+          View project
         </a>
 				{/* </a> */}
       </ProjectContent>

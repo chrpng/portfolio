@@ -22,6 +22,7 @@ export const NavButton = styled.button`
   font-weight: 900;
   letter-spacing: -1px;
   z-index: 10;
+	cursor: pointer;
 
   &::after {
     content: "";
@@ -122,6 +123,8 @@ export const NavCenter = styled.div`
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+
+	align-items: flex-end;
 `
 
 export const NavSocials = styled.div`
@@ -152,6 +155,20 @@ export const NavSocials = styled.div`
   }
 `
 
+export const NavLinksWrapper = styled.div`
+	position: fixed;
+  top: 0;
+  right: 0;
+	filter: drop-shadow(-2px -2px 3px var(--primary));
+
+	@media (min-width: 768px) {
+		position: relative;
+		filter: none;
+		top: auto;
+		right: auto;
+	}
+`
+
 export const NavLinks = styled.div`
   background-color: var(--background);
   display: flex;
@@ -167,10 +184,13 @@ export const NavLinks = styled.div`
   visibility: hidden;
   opacity: 0;
   width: 100%;
+  width: 180px;
   max-width: 500px;
   transform: translateX(100%);
-  transition: opacity 0.2s ease-in, transform 0.2s ease-in,
-    visibility var(--transition) ease-in;
+	box-shadow: -5px 0px 5px var(--primary);
+	clip-path: ellipse(180px 180px at 100% 50%);
+  transition: opacity var(--globalTransitionTiming), transform var(--globalTransitionTiming),
+    visibility var(--transition) ease-in, background-color var(--globalTransitionTiming);
 
   @media (min-width: 768px) {
     position: relative;
@@ -182,6 +202,8 @@ export const NavLinks = styled.div`
     visibility: visible;
     opacity: 1;
     padding: 0;
+		box-shadow: none;
+		clip-path: none;
   }
 
   &.show-nav {

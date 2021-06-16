@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import DarkMode from "../DarkMode/DarkMode"
 
-import { NavBar, NavButton, NavLogo, NavLogoImageWrapper, NavCenter, NavLinks, Spacer, ThemeSwitch } from "./Navbar.styles"
+import { NavBar, NavButton, NavLogo, NavLogoImageWrapper, NavCenter, NavLinksWrapper, NavLinks, Spacer, ThemeSwitch } from "./Navbar.styles"
 
 const Navbar = () => {
   const [isOpen, setNav] = useState(false)
@@ -41,27 +41,29 @@ const Navbar = () => {
           <NavButton type="button" onClick={toggleNav}>
             Menu.
           </NavButton>
-          <NavLinks
-            className={
-              isOpen ? `${"navbar-links"} ${"show-nav"}` : `${"navbar-links"}`
-            }
-          >
-            <ul>
-              {links.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <AniLink cover bg="var(--background)" to={item.path} activeClassName="active">
-											{item.icon}{" "}
-                      {item.text}
-                    </AniLink>
-                  </li>
-                )
-              })}
-							<li>
-								<ThemeSwitch><DarkMode /></ThemeSwitch>
-							</li>
-            </ul>
-          </NavLinks>
+					<NavLinksWrapper>
+						<NavLinks
+							className={
+								isOpen ? `${"navbar-links"} ${"show-nav"}` : `${"navbar-links"}`
+							}
+						>
+							<ul>
+								{links.map((item, index) => {
+									return (
+										<li key={index}>
+											<AniLink cover bg="var(--background)" to={item.path} activeClassName="active">
+												{item.icon}{" "}
+												{item.text}
+											</AniLink>
+										</li>
+									)
+								})}
+								<li>
+									<ThemeSwitch><DarkMode /></ThemeSwitch>
+								</li>
+							</ul>
+						</NavLinks>
+					</NavLinksWrapper>
         </NavCenter>
       </NavBar>
       <Spacer />

@@ -13,7 +13,7 @@ export const NavBar = styled.nav`
 
 export const NavButton = styled.button`
   position: relative;
-  color: #fff;
+  color: var(--primaryText);
   padding: 12px 0 17px 0;
   order: 1;
   border: none;
@@ -153,7 +153,7 @@ export const NavSocials = styled.div`
 `
 
 export const NavLinks = styled.div`
-  // background-color: var(--background);
+  background-color: var(--background);
   display: flex;
 	justify-content: flex-end;
 	text-align: right;

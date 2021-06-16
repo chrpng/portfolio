@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
+import { gsap } from "gsap"
 
 import content from "./content"
 import PulseContainer from "../PulseContainer/PulseContainer"
@@ -18,12 +19,12 @@ const SplashSection = styled.section`
 	// background-color: #292c35;
 	// border: 2px solid red;
 
-	* {
+	> * {
 		margin: 0;
 	}
 	
-	a.btn {
-		margin-top: 20px;
+	.see-more {
+		padding-top: 20px
 	}
 
 	@media (min-width: 768px) {
@@ -38,18 +39,39 @@ const SplashH3 = styled.h3`
 const Welcome = () => {
 	const { tagline, title, subtitle } = content
 
+	const taglineRef = useRef()
+	const titleRef = useRef()
+	const subtitleRef = useRef()
+	const seeMoreRef = useRef()
+
+	// useEffect(() => {
+	// 	gsap.fromTo([taglineRef.current, titleRef.current, subtitleRef.current, seeMoreRef.current],
+	// 	// gsap.from('section.splash > *', {
+	// 	{
+	// 		y: -10,
+	// 		autoAlpha: 0,
+	// 	}, {
+	// 		y: 0,
+	// 		ease: "elastic",
+	// 		autoAlpha: 1,
+	// 		stagger: 0.2,
+	// 	})
+	// })
+
 	return (
-		<SplashSection>
-			<SplashH3>
+		<SplashSection className="splash">
+			<SplashH3 ref={taglineRef}>
 				{tagline}
 			</SplashH3>
-			<h1>
+			<h1 ref={titleRef}>
 				{title}
 			</h1>
-			<h3>
+			<h3 ref={subtitleRef}>
 				{subtitle}
 			</h3>
-			<AniLink className="btn" cover to="/portfolio">See more</AniLink>
+			<div className="see-more" ref={seeMoreRef}>
+				<AniLink className="btn" cover to="/portfolio">See more</AniLink>
+			</div>
 		</SplashSection>
 	)
 }

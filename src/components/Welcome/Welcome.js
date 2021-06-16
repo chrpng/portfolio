@@ -2,9 +2,11 @@ import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
 
-import content from "./content"
-
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+
+import PulseContainer from "../PulseContainer/PulseContainer"
+
+import content from "./content"
 
 const SplashSection = styled.section`
 	display: flex;
@@ -29,10 +31,32 @@ const SplashSection = styled.section`
 	@media (min-width: 768px) {
 		padding-left: 96px;
 	}
+
+	@media only screen and (min-height: 1168px) {
+		
+	}
 `
 
 const SplashH3 = styled.h3`
  color: var(--primary);
+`
+
+const PositionAvatar = styled.div`
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+	}
+
+	@media(min-width: 1200px) {
+		position: absolute;
+		z-index: -5;
+		left: 100px;
+		bottom: 50px;
+		left: auto;
+		right: 100px;
+		bottom: calc(50% - 200px);
+	}
 `
 
 const Welcome = () => {
@@ -71,6 +95,9 @@ const Welcome = () => {
 			<div className="see-more" ref={seeMoreRef}>
 				<AniLink className="btn" cover to="/portfolio">See more</AniLink>
 			</div>
+			<PositionAvatar>
+				<PulseContainer />
+			</PositionAvatar>
 		</SplashSection>
 	)
 }

@@ -1,22 +1,5 @@
 import React from "react"
 import ProjectList from "./ProjectList"
-import { useStaticQuery, graphql } from "gatsby"
-
-// const getProjects = graphql`
-//   query {
-// 		allFile(filter: {relativePath: {regex: "/projects/"}}) {
-// 			edges {
-// 				node {
-// 					id
-// 					name
-// 					childImageSharp {
-// 						gatsbyImageData
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// `
 
 const projectsArray = [
 	{
@@ -67,7 +50,6 @@ const projectsArray = [
 ]
 
 const ProjectsWrapper = () => {
-  // const { projects } = useStaticQuery(getProjects)
   return <ProjectList projects={projectsArray} />
 }
 

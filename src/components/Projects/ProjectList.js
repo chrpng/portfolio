@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Filter from "./Filter/Filter"
 import Project from "./Project"
@@ -34,13 +34,6 @@ const ProjectList = (props) => {
 		}
 		setFilter(tag)
 	}
-	// useEffect(() => {
-	// 	let isMounted = true
-	// 	if (isMounted) {
-	// 		setProjects(props.projects)
-	// 	}
-	// 	return () => { isMounted = false }
-	// }, [])
 
 	return (
 		<>

@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { gsap } from "gsap"
 
 import content from "./content"
-import PulseContainer from "../PulseContainer/PulseContainer"
 
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiFolder, FiUser } from "react-icons/fi";
 
-export default [
+const links = [
   {
     path: "/portfolio",
     text: "portfolio",
@@ -13,3 +13,5 @@ export default [
 		icon: <FiUser />,
   },
 ]
+
+export default links

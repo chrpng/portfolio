@@ -1,45 +1,18 @@
 import React, { useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { useStaticQuery, graphql } from "gatsby"
 import links from "../../constants/links"
 // import quickNav from "../../constants/quickNav"
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import DarkMode from "../DarkMode/DarkMode"
 
 import { NavBar, NavButton, NavLogo, NavLogoImageWrapper, NavCenter, NavLinks, Spacer, ThemeSwitch } from "./Navbar.styles"
-
-// const getAvatar = graphql`
-// 	query {
-// 		site {
-// 			siteMetadata {
-// 				title
-// 			}
-// 		}
-// 		contentfulAvatar {
-// 			image {
-// 				gatsbyImageData(
-// 					height: 50
-// 					placeholder: BLURRED
-// 					breakpoints: [768, 1200]
-// 				)
-// 			}
-// 		}
-// 	}
-// `
 
 const Navbar = () => {
   const [isOpen, setNav] = useState(false)
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
-
-  // const {
-  //   site: { siteMetadata },
-	// 	contentfulAvatar
-  // } = useStaticQuery(getAvatar)
-
-	// const imageAvatar = getImage(contentfulAvatar.image)
 
   return (
     <>
@@ -89,17 +62,6 @@ const Navbar = () => {
 							</li>
             </ul>
           </NavLinks>
-          {/* <NavSocials>
-            {quickNav.map((item, index) => {
-              return (
-                <li key={index}>
-                  <AniLink cover bg="var(--background)" to={item.path}>
-                    {item.icon}
-                  </AniLink>
-                </li>
-              )
-            })}
-          </NavSocials> */}
         </NavCenter>
       </NavBar>
       <Spacer />

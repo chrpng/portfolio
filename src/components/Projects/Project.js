@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import ProjectImageGetter from "./ProjectImageGetter"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
 import propTypes from "prop-types"
 
 const ProjectItem = styled.article`
@@ -87,13 +85,10 @@ const ProjectTag = styled.li`
 `
 
 const Project = ({ project }) => {
-  const { name, slug, url, imagePath, tags } = project
-
-  // const image = getImage(images[0])
+  const { name, url, imagePath, tags } = project
 
   return (
     <ProjectItem>
-      {/* <GatsbyImage image={image} alt="single Project" /> */}
 			<a href={url}>
 				<ProjectImageWrapper>
 					<ProjectTagsContainer>
@@ -110,10 +105,7 @@ const Project = ({ project }) => {
 			</a>
       <ProjectContent>
         <h2>{name || "Name not listed"}</h2>
-        {/* <h3>£ {price || "Call"}</h3> */}
-				{/* <a href={`/projects/${slug}`}> */}
-        <a className="btn" bg="#1d1d1d" href={url}>
-        {/* <AniLink className="btn" cover bg="#1d1d1d" to={`/Projects/${slug}`}> */}
+        <a className="btn" href={url}>
           View project
         </a>
 				{/* </a> */}

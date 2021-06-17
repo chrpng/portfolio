@@ -24,6 +24,8 @@ export const NavButton = styled.button`
   z-index: 10;
 	cursor: pointer;
 
+	overflow: hidden;
+
   &::after {
     content: "";
     display: block;
@@ -190,8 +192,7 @@ export const NavLinks = styled.div`
 	box-shadow: -5px 0px 5px var(--primary);
 	clip-path: ellipse(180px 180px at 100% 50%);
   transition: opacity var(--globalTransitionTiming), transform var(--globalTransitionTiming),
-    visibility var(--transition) ease-in;
-    // visibility var(--transition) ease-in, background-color var(--globalTransitionTiming);
+    visibility var(--transition) ease-in, background-color var(--globalTransitionTiming);
 
   @media (min-width: 768px) {
     position: relative;

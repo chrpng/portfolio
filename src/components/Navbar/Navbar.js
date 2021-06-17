@@ -45,8 +45,8 @@ const Navbar = () => {
           <NavButton type="button" onClick={toggleNav}>
 						<SpinTranslateButtonWrapper
 							condition={isOpen}
-							state1={<FiMenu />}
-							state2={<FiX />}
+							state1={<FiMenu size='2em' />}
+							state2={<FiX size='2em' />}
 						/>
 						{/* <ClickTranslateAnim
 							onClick={changeMode}

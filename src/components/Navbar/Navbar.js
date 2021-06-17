@@ -7,9 +7,13 @@ import { StaticImage } from "gatsby-plugin-image"
 import DarkMode from "../DarkMode/DarkMode"
 
 import { NavBar, NavButton, NavLogo, NavLogoImageWrapper, NavCenter, NavLinksWrapper, NavLinks, Spacer, ThemeSwitch } from "./Navbar.styles"
+import { FiMenu, FiX } from "react-icons/fi"
+
+import SpinTranslateButtonWrapper from '../CustomAnimations/SpinTranslateButton.styles'
 
 const Navbar = () => {
   const [isOpen, setNav] = useState(false)
+
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
@@ -39,7 +43,19 @@ const Navbar = () => {
           </NavLogo>
           
           <NavButton type="button" onClick={toggleNav}>
-            Menu.
+						<SpinTranslateButtonWrapper
+							condition={isOpen}
+							state1={<FiMenu />}
+							state2={<FiX />}
+						/>
+						{/* <ClickTranslateAnim
+							onClick={changeMode}
+							className={inTransition ? "transition" : ""}
+						>
+							<ClickSpinAnim>
+								{isOpen ? <FiMenu /> : <FiX />}
+							</ClickSpinAnim>
+						</ClickTranslateAnim> */}
           </NavButton>
 					<NavLinksWrapper>
 						<NavLinks
@@ -51,7 +67,20 @@ const Navbar = () => {
 								{links.map((item, index) => {
 									return (
 										<li key={index}>
-											<AniLink cover bg="var(--background)" to={item.path} activeClassName="active">
+											<AniLink
+												cover 
+												to={item.path} 
+												activeClassName="active"
+												bg="
+													url(https://source.unsplash.com/random)
+													center / cover   /* position / size */
+													no-repeat        /* repeat */
+													fixed            /* attachment */
+													padding-box      /* origin */
+													content-box      /* clip */
+													white            /* color */
+												" 
+											>
 												{item.icon}{" "}
 												{item.text}
 											</AniLink>

@@ -46,7 +46,7 @@ export const NavLogo = styled.div`
   width: 60%;
   flex-shrink: 0;
   letter-spacing: -0.5px;
-  padding: 7px 0;
+  padding: 14px 0 7px;
   z-index: 2;
 
   @media (min-width: 1200px) {
@@ -170,7 +170,7 @@ export const NavLinksWrapper = styled.div`
 `
 
 export const NavLinks = styled.div`
-  background-color: var(--background);
+	background-color: var(--background);
   display: flex;
 	justify-content: flex-end;
 	text-align: right;
@@ -190,7 +190,8 @@ export const NavLinks = styled.div`
 	box-shadow: -5px 0px 5px var(--primary);
 	clip-path: ellipse(180px 180px at 100% 50%);
   transition: opacity var(--globalTransitionTiming), transform var(--globalTransitionTiming),
-    visibility var(--transition) ease-in, background-color var(--globalTransitionTiming);
+    visibility var(--transition) ease-in;
+    // visibility var(--transition) ease-in, background-color var(--globalTransitionTiming);
 
   @media (min-width: 768px) {
     position: relative;

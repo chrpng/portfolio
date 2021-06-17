@@ -25,9 +25,10 @@ const ProjectTag = styled.li`
 const Filter = ({ filter, handleFilter }) => {
 	return (
 		<ul>
-			{tags.map(tag => {
+			{tags.map((tag, i) => {
 				return (
 					<ProjectTag 
+						key={i}
 						onClick={() => handleFilter(tag)}
 						className={filter === tag ? "selected" : ""}
 					>

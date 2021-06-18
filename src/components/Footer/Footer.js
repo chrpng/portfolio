@@ -41,7 +41,7 @@ const Footer = () => {
 	return (
 		<StyledFooter>
 			<CenterDiv>
-				<AniLink className="footer-links" cover to="/"><FiHome/></AniLink>
+				<AniLink className="footer-links" cover bg="url(https://source.unsplash.com/random)" to="/"><FiHome/></AniLink>
 				<a className="footer-links" href="https://github.com/chrpng" aria-label="Github link"><FiGithub/></a>
 				<a className="footer-links" href="https://www.linkedin.com/in/christopher-png-329b9251/" aria-label="LinkedIn link"><FiLinkedin/></a>
 			</CenterDiv>

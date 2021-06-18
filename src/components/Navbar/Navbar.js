@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import links from "../../constants/links"
 // import quickNav from "../../constants/quickNav"
@@ -11,12 +11,17 @@ import { FiMenu, FiX } from "react-icons/fi"
 
 import SpinTranslateButtonWrapper from '../CustomAnimations/SpinTranslateButton.styles'
 
-const Navbar = () => {
+const Navbar = ({ location }) => {
+	console.log(location);
   const [isOpen, setNav] = useState(false)
 
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
+
+	useEffect(() => {
+		setNav(false)
+	}, [location.pathname])
 
   return (
     <>
@@ -45,17 +50,9 @@ const Navbar = () => {
           <NavButton type="button" onClick={toggleNav}>
 						<SpinTranslateButtonWrapper
 							condition={isOpen}
-							state1={<FiMenu size='2em' />}
-							state2={<FiX size='2em' />}
+							state1={<FiX size='2em' />}
+							state2={<FiMenu size='2em' />}
 						/>
-						{/* <ClickTranslateAnim
-							onClick={changeMode}
-							className={inTransition ? "transition" : ""}
-						>
-							<ClickSpinAnim>
-								{isOpen ? <FiMenu /> : <FiX />}
-							</ClickSpinAnim>
-						</ClickTranslateAnim> */}
           </NavButton>
 					<NavLinksWrapper>
 						<NavLinks
@@ -71,15 +68,7 @@ const Navbar = () => {
 												cover 
 												to={item.path} 
 												activeClassName="active"
-												bg="
-													url(https://source.unsplash.com/random)
-													center / cover   /* position / size */
-													no-repeat        /* repeat */
-													fixed            /* attachment */
-													padding-box      /* origin */
-													content-box      /* clip */
-													white            /* color */
-												" 
+												bg="var(--background)"
 											>
 												{item.icon}{" "}
 												{item.text}

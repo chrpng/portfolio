@@ -22,6 +22,8 @@
 		 // --primary: #ffc400; //yellowish
 		 --primary: #de5375; //reddish
 		 --inActive: #505050;
+
+		 --transitionBg: url(https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png)
 		 
 		 --menuItem: 1.125rem;
 		 --transition: 0.3s;
@@ -50,7 +52,7 @@
 			 --insetShadow: 0 0 50px var(--background) inset;
 		 }
  
-		 --navbarSpacer: 75px;
+		 --navbarSpacer: 77px;
  
 		 @media(min-width:768px) {
 			 --h1: 2.375rem;
@@ -191,7 +193,7 @@
 	 // margin-top: var(--navbarSpacer);
  `
  
- const Layout = ({ children }) => {
+ const Layout = ({ children, location }) => {
 	 const data = useStaticQuery(graphql`
 		 query SiteTitleQuery {
 			 site {
@@ -205,7 +207,7 @@
 	 return (
 		 <>
 			 <GlobalStyle />
-			 <Navbar />
+			 <Navbar location={location} />
 			 <StyledMain>{children}</StyledMain>
 			 <Footer />
 		 </>

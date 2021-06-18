@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const NavBar = styled.nav`
   padding: 0 1.875rem;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 5;
   background-color: var(--background);
 	height: var(--navbarSpacer);

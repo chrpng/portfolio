@@ -38,6 +38,8 @@ const GlobalStyle = createGlobalStyle`
 
 		--globalTransitionTiming: 0.2s ease-in;
 	
+		margin-right: calc((-1) * (100vw - 100%));
+
 		body.light-mode {
 			// linear-gradient(rgba(239, 233, 233, 0.46), transparent 22%)
 			// --background: rgba(239, 233, 233, 0.46);

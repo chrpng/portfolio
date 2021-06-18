@@ -53,6 +53,14 @@ const Navbar = ({ location }) => {
 							state1={<FiX size='2em' />}
 							state2={<FiMenu size='2em' />}
 						/>
+						{/* <ClickTranslateAnim
+							onClick={changeMode}
+							className={inTransition ? "transition" : ""}
+						>
+							<ClickSpinAnim>
+								{isOpen ? <FiMenu /> : <FiX />}
+							</ClickSpinAnim>
+						</ClickTranslateAnim> */}
           </NavButton>
 					<NavLinksWrapper>
 						<NavLinks
